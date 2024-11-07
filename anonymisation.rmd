@@ -1,0 +1,79 @@
+---
+title: "anonymization"
+output: pdf_document
+date: "2024-11-05"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+require(dplyr)  
+require(sdcMicro)
+require(readxl)
+require(eeptools)
+```
+
+## R Markdown
+
+Step 2: Anonymise the raw dataset and calculate the disclosure risks (you can use any suitable metrics, e.g. among these that were discussed in the course or presented in optional readings). In these calculations, assume that your anonymised dataset, the public data (that is, the files public_data_registerX.xslx and public_data_resultsX.xslx) as well as your submitted report (see Step 4 below) will be available to a potential adversary, but no other data will be available.
+
+```{r}
+pri_data <- read_excel("private_dataE.xlsx")
+# pub_reg_data <- read_excel("public_data_registerE.xlsx")
+# pub_res_data <- read_excel("public_data_resultsE.xlsx")
+
+pri_data$dob <- as.Date(pri_data$dob)
+pri_data$age <- floor(age_calc(pri_data$dob, units = "years"))
+
+print(pri_data)
+```
+```{r}
+sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("dob", "sex", "citizenship", "marital_status"))
+#print(sdc_obj@risk)
+print(sdc_obj, type="kAnon")
+print(sdc_obj, "risk")
+#print(sdc_obj)
+```
+
+```{r}
+sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age", "sex", "citizenship", "marital_status"))
+
+prammed <- pram(sdc_obj, variables = "sex", strata_variables = NULL, pd = 0.1, alpha = 0.5)
+kAnon_violations(prammed, TRUE, 2)
+```
+
+```{r}
+#globalRecode(pri_data$age, breaks = 6)
+sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age", "sex", "citizenship", "marital_status"))
+
+sdc_obj <- globalRecode(sdc_obj, column="age", breaks=8)
+
+manip_data <- get.sdcMicroObj(sdc_obj, type="manipKeyVars")
+
+print(manip_data)
+
+
+
+```
+
+```{r}
+sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("dob", "sex", "citizenship", "marital_status"))
+
+# print(sdc_obj)
+kAnon_violations(sdc_obj, TRUE, 5)
+```
+```{r}
+sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age", "sex", "citizenship", "marital_status"))
+
+suppressed <- localSuppression(sdc_obj)
+print(suppressed)
+```
+
+Other ideas:
+- noise to age
+- suppression
+- swaping (e.g. citizenship, marital status)
+- get rid of zip codes and other data we simply don't use
+
