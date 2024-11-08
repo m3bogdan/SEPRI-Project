@@ -8,6 +8,7 @@ we can delete stuff without caring
 try to make as a similar comparsion as you can
 
 - is chi-square test enough ? -> look at distributions, graphs etc 
+<<<<<<< HEAD
 its fine
 
 - pram - how the fuck to de-anonymise 
@@ -15,3 +16,6 @@ its fine
 
 - are we suppose to on purpose do a bad anonymization so the other group can de-anonymize it
 yes, a little bit
+=======
+- pram - how the  to de-anonymise 
+>>>>>>> 6e8ee86f7ed4f0ba740237e05fd80a8d6052be8c
