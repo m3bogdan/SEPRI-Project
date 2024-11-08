@@ -13,6 +13,7 @@ require(dplyr)
 require(sdcMicro)
 require(readxl)
 require(eeptools)
+require(openxlsx)
 ```
 
 ## R Markdown
@@ -48,6 +49,7 @@ sdc_obj <- pram(sdc_obj, variables = "sex", strata_variables = NULL, pd = 0.8, a
 anonymized_data <- extractManipData(sdc_obj)
 print(anonymized_data)
 
+
 ```
 
 Global recodinng on age -> age groups 
@@ -66,6 +68,11 @@ sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age_group", "sex", "citizen
 anonymized_data <- extractManipData(sdc_obj)
 
 print(anonymized_data)
+
+anon_data <- anonymized_data[, !(colnames(anonymized_data) %in% c("dob", "age"))]
+print(anon_data)
+
+write.xlsx(anon_data, file = "anon_data_global_recoding.xlsx")
 
 
 
