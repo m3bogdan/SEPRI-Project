@@ -30,7 +30,7 @@ pri_data$age <- floor(age_calc(pri_data$dob, units = "years"))
 
 pri_data_test <- head(pri_data,10)
 
-print(pri_data_test)
+print(pri_data)
 ```
 Creating a sdc object and computing initial risks: global risk and k-anonymity 
 ```{r}
@@ -55,9 +55,9 @@ print(anonymized_data)
 Global recodinng on age -> age groups 
 ```{r}
 #globalRecode(pri_data$age, breaks = 6)
-pri_data$age_group <- cut(pri_data$age, breaks=c(0, 18, 30, 40, 50, 60, 70, 80, 100), 
-                    labels=c("0-18", "19-30", "31-40", "41-50", "51-60", "61-70", "71-80", "81+"), 
-                    right=FALSE)
+pri_data$age_group <- cut(pri_data$age, breaks=c(19, 30, 38, 48, 58, 70), 
+                    labels=c("(19, 30]", "(30, 38]", "(38, 48]", "(48, 58]", "(58, 70]", "(70, 101]"), 
+                    right=TRUE)
 
 sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age_group", "sex", "citizenship", "marital_status"))
 
@@ -72,7 +72,7 @@ print(anonymized_data)
 anon_data <- anonymized_data[, !(colnames(anonymized_data) %in% c("dob", "age"))]
 print(anon_data)
 
-write.xlsx(anon_data, file = "anon_data_global_recoding.xlsx")
+write.xlsx(anon_data, file = "anon_data/anon_data_global_recoding.xlsx")
 
 
 
@@ -96,4 +96,7 @@ Other ideas:
 - suppression
 - swaping (e.g. citizenship, marital status)
 - get rid of zip codes and other data we simply don't use
+
+Questions
+- does "analysis"
 
