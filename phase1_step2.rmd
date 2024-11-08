@@ -32,17 +32,16 @@ pri_data <- read_excel("data/private_dataE.xlsx", sheet =1)
 pri_data$dob <- as.Date(pri_data$dob)
 pri_data$age <- floor(age_calc(pri_data$dob, units = "years"))
 
-pri_data_test <- head(pri_data,10)
+#pri_data_test <- head(pri_data,10)
 
 print(pri_data)
 #print(typeof(pri_data))
-df <- as.data.frame(pri_data)
 #print(typeof(df))
 
 ```
 Creating a sdc object and computing initial risks: global risk and k-anonymity 
 ```{r}
-sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("dob", "sex", "citizenship", "education", "marital_status"))
+sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("dob", "sex", "citizenship", "education", "marital_status", "zip"))
 #print(sdc_obj@risk)
 print(sdc_obj, type="kAnon")
 print(sdc_obj, "risk")
@@ -58,14 +57,15 @@ pri_data <- subset(pri_data, select = -name)
 
 PRAM on sex variable 
 ```{r}
-sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age", "sex", "citizenship", "education", "marital_status"))
+sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age", "sex", "citizenship", "education", "marital_status", "zip"))
 
 sdc_obj <- pram(sdc_obj, variables = "sex", strata_variables = NULL, pd = 0.8, alpha = 0.5)
 # kAnon_violations(prammed, TRUE, 2)
 anonymized_data_pram <- extractManipData(sdc_obj)
 print(anonymized_data_pram)
+print(sdc_obj, type="kAnon")
 
-write.xlsx(anonymized_data_pram, file = "anon_data/anonymized_data_pram.xlsx")
+#write.xlsx(anonymized_data_pram, file = "anon_data/anonymized_data_pram.xlsx")
 
 ```
 
@@ -75,7 +75,8 @@ Global recodinng on age -> age groups
 pri_data$age_group <- cut(pri_data$age, breaks=c(18, 30, 38, 48, 58, 70, 101), 
                     right=TRUE)
 
-sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age_group", "sex", "citizenship", "education", "marital_status"))
+sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age_group", "sex", "citizenship", "education", "marital_status", "zip"))
+sdc_obj <- pram(sdc_obj, variables = "sex", strata_variables = NULL, pd = 0.8, alpha = 0.5)
 
 #manip_data <- get.sdcMicroObj(sdc_obj, type="manipKeyVars")
 print(sdc_obj, type="kAnon")
@@ -88,20 +89,20 @@ print(anonymized_data)
 anon_data <- anonymized_data[, !(colnames(anonymized_data) %in% c("dob", "age"))]
 print(anon_data)
 
-write.xlsx(anon_data, file = "anon_data/anon_data_global_recoding.xlsx")
+write.xlsx(anon_data, file = "anon_data/anon_data_global_recoding_pram.xlsx")
 
 ```
 Swapping 
 ```{r}
-sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age", "sex", "citizenship", "education", "marital_status"))
-pri_data$marital_status <- mapvalues(pri_data$marital_status, from=c("Divorced", "Married/separated", "Never married", "Widowed"), to=c(1, 2, 3, 4))
+sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age", "sex", "citizenship", "education", "marital_status", "zip"))
+#pri_data$marital_status <- mapvalues(pri_data$marital_status, from=c("Divorced", "Married/separated", "Never married", "Widowed"), to=c(1, 2, 3, 4))
 data_swap <- rankSwap(obj = pri_data, variables = c("marital_status"))
 data_swap
 ```
 
 Supression 
 ```{r}
-sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age", "sex", "citizenship", "education", "marital_status"))
+sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age", "sex", "citizenship", "education", "marital_status", "zip"))
 
 suppressed <- localSuppression(sdc_obj)
 print(suppressed)
