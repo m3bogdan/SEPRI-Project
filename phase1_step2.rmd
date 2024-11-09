@@ -60,13 +60,14 @@ Global recoding on age -> age groups
 Pram on sex variable 
 ```{r}
 #globalRecode(pri_data$age, breaks = 6)
-pri_data$age_group <- cut(pri_data$age, breaks=c(18, 30, 38, 48, 58, 70, 101), 
+pri_data_pram_age <- pri_data
+pri_data_pram_age$age_group <- cut(pri_data_pram_age$age, breaks=c(18, 30, 38, 48, 58, 70, 101), 
                     right=TRUE)
 
 # creating object 
-sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age_group", "sex", "citizenship", "education", "marital_status", "zip"))
+sdc_obj <- createSdcObj(dat = pri_data_pram_age, keyVars = c("age_group", "sex", "citizenship", "education", "marital_status", "zip"))
 
-sdc_obj_k <- createSdcObj(dat = pri_data, keyVars = c("age_group", "citizenship", "marital_status", "zip"))
+sdc_obj_k <- createSdcObj(dat = pri_data_pram_age, keyVars = c("age_group", "citizenship", "marital_status", "zip"))
 print(sdc_obj_k, type="kAnon")
 print(sdc_obj_k, "risk")
 print(sdc_obj_k@keyVars)
@@ -97,24 +98,27 @@ Global recoding on marital status
 Pram on sex
 ```{r}
 #global recode on age 
-pri_data$age_group <- cut(pri_data$age, breaks=c(18, 30, 38, 48, 58, 70, 101), 
+pri_data_pram_age_mar <- pri_data
+pri_data_pram_age_mar$age_group <- cut(pri_data_pram_age_mar$age, breaks=c(18, 30, 38, 48, 58, 70, 101), 
                     right=TRUE)
 # global recode on marital status 
-pri_data$marital_status <- mapvalues(pri_data$marital_status, from=c("Divorced", "Married/separated", "Never married", "Widowed"), to=c("Not married", "Married", "Not married", "Not married"))
+pri_data_pram_age_mar$marital_status <- mapvalues(pri_data_pram_age_mar$marital_status, from=c("Divorced", "Married/separated", "Never married", "Widowed"), to=c("Not married", "Married", "Not married", "Not married"))
 
 # creating object 
-sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age_group", "sex", "citizenship", "education", "marital_status", "zip"))
+sdc_obj <- createSdcObj(dat = pri_data_pram_age_mar, keyVars = c("age_group", "sex", "citizenship", "education", "marital_status", "zip"))
 
-sdc_obj_k <- createSdcObj(dat = pri_data, keyVars = c("age_group", "citizenship", "marital_status", "zip"))
+sdc_obj_k <- createSdcObj(dat = pri_data_pram_age_mar, keyVars = c("age_group", "citizenship", "marital_status", "zip"))
 print(sdc_obj_k, type="kAnon")
 print(sdc_obj_k, "risk")
 
 # pram on sex variable 
 sdc_obj <- pram(sdc_obj, variables = "sex", strata_variables = NULL, pd = 0.7, alpha = 0.5)
 
+anonymized_data2 <- extractManipData(sdc_obj)
+
 # delete the name 
-anon_data_pram_global_sex_age <- anonymized_data[, !(colnames(anonymized_data) %in% c("dob", "age"))]
-print(anon_data)
+anon_data_pram_global_sex_age <- anonymized_data2[, !(colnames(anonymized_data) %in% c("dob", "age"))]
+print(anon_data_pram_global_sex_age)
 
 write.xlsx(anon_data_pram_global_sex_age, file = "anon_data/anon_data_global2_pram.xlsx")
 
@@ -123,21 +127,24 @@ Global recoding on age
 Global recoding on marital status 
 ```{r}
 #global recode on age 
-pri_data$age_group <- cut(pri_data$age, breaks=c(18, 30, 38, 48, 58, 70, 101), 
+pri_data_age_mar <- pri_data
+pri_data_age_mar$age_group <- cut(pri_data_age_mar$age, breaks=c(18, 30, 38, 48, 58, 70, 101), 
                     right=TRUE)
 # global recode on marital status 
-pri_data$marital_status <- mapvalues(pri_data$marital_status, from=c("Divorced", "Married/separated", "Never married", "Widowed"), to=c("Not married", "Married", "Not married", "Not married"))
+pri_data_age_mar$marital_status <- mapvalues(pri_data_age_mar$marital_status, from=c("Divorced", "Married/separated", "Never married", "Widowed"), to=c("Not married", "Married", "Not married", "Not married"))
 
 # creating object 
-sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("age_group", "sex", "citizenship", "education", "marital_status", "zip"))
+sdc_obj <- createSdcObj(dat = pri_data_age_mar, keyVars = c("age_group", "sex", "citizenship", "education", "marital_status", "zip"))
 
-sdc_obj_k <- createSdcObj(dat = pri_data, keyVars = c("age_group", "citizenship", "marital_status", "zip"))
+sdc_obj_k <- createSdcObj(dat = pri_data_age_mar, keyVars = c("age_group", "citizenship", "marital_status", "zip"))
 print(sdc_obj_k, type="kAnon")
 print(sdc_obj_k, "risk")
 
+anonymized_data3 <- extractManipData(sdc_obj)
+
 # delete the dob and age  
-anon_data_pram_global_sex_age <- anonymized_data[, !(colnames(anonymized_data) %in% c("dob", "age"))]
-print(anon_data)
+anon_data_pram_global_sex_age <- anonymized_data3[, !(colnames(anonymized_data) %in% c("dob", "age"))]
+print(anon_data_pram_global_sex_age)
 
 write.xlsx(anon_data_pram_global_sex_age, file = "anon_data/anon_data_global2.xlsx")
 
