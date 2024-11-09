@@ -49,6 +49,7 @@ print(sdc_obj, "risk")
 # Print L-Diversity
  # Output for l-diversity
 #sdc_obj@risk$global
+
 ```
 Removing direct identifiers: Name
 ```{r}
@@ -71,7 +72,7 @@ print(sdc_obj_k, "risk")
 print(sdc_obj_k@keyVars)
 
 # pram on sex variable 
-sdc_obj <- pram(sdc_obj, variables = "sex", strata_variables = NULL, pd = 0.8, alpha = 0.5)
+sdc_obj <- pram(sdc_obj, variables = "sex", strata_variables = NULL, pd = 0.7, alpha = 0.5)
 
 #key_vars_subset <- which(names(pri_data) %in% c("age_group", "citizenship", "marital_status", "zip"))
 #sdc_obj@keyVars <- key_vars_subset
@@ -83,12 +84,12 @@ sdc_obj <- pram(sdc_obj, variables = "sex", strata_variables = NULL, pd = 0.8, a
 
 anonymized_data <- extractManipData(sdc_obj)
 
-print(anonymized_data)
+#print(anonymized_data)
 
-#anon_data <- anonymized_data[, !(colnames(anonymized_data) %in% c("dob", "age"))]
-#print(anon_data)
+anon_data <- anonymized_data[, !(colnames(anonymized_data) %in% c("dob", "age"))]
+print(anon_data)
 
-#write.xlsx(anon_data, file = "anon_data/anon_data_global_recoding_pram.xlsx")
+write.xlsx(anon_data, file = "anon_data/anon_data_global_recoding_pram.xlsx")
 
 ```
 Global recoding on age 
@@ -109,13 +110,13 @@ print(sdc_obj_k, type="kAnon")
 print(sdc_obj_k, "risk")
 
 # pram on sex variable 
-sdc_obj <- pram(sdc_obj, variables = "sex", strata_variables = NULL, pd = 0.8, alpha = 0.5)
+sdc_obj <- pram(sdc_obj, variables = "sex", strata_variables = NULL, pd = 0.7, alpha = 0.5)
 
 # delete the name 
 anon_data_pram_global_sex_age <- anonymized_data[, !(colnames(anonymized_data) %in% c("dob", "age"))]
 print(anon_data)
 
-#write.xlsx(anon_data_pram_global_sex_age, file = "anon_data/anon_data_global2_pram.xlsx")
+write.xlsx(anon_data_pram_global_sex_age, file = "anon_data/anon_data_global2_pram.xlsx")
 
 ```
 Global recoding on age
@@ -138,7 +139,7 @@ print(sdc_obj_k, "risk")
 anon_data_pram_global_sex_age <- anonymized_data[, !(colnames(anonymized_data) %in% c("dob", "age"))]
 print(anon_data)
 
-#write.xlsx(anon_data_pram_global_sex_age, file = "anon_data/anon_data_global2_pram.xlsx")
+write.xlsx(anon_data_pram_global_sex_age, file = "anon_data/anon_data_global2.xlsx")
 
 ```
 
