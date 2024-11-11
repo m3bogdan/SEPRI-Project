@@ -45,6 +45,9 @@ sdc_obj <- createSdcObj(dat = pri_data, keyVars = c("dob", "sex", "citizenship",
 #print(sdc_obj@risk)
 print(sdc_obj, type="kAnon")
 print(sdc_obj, "risk")
+# Global risk (average re-identification probability)
+print(sdc_obj@risk$global$risk)
+
 #print(sdc_obj)
 # Print L-Diversity
  # Output for l-diversity
@@ -70,7 +73,6 @@ sdc_obj <- createSdcObj(dat = pri_data_pram_age, keyVars = c("age_group", "sex",
 sdc_obj_k <- createSdcObj(dat = pri_data_pram_age, keyVars = c("age_group", "citizenship", "marital_status", "zip"))
 print(sdc_obj_k, type="kAnon")
 print(sdc_obj_k, "risk")
-print(sdc_obj_k@keyVars)
 
 # pram on sex variable 
 sdc_obj <- pram(sdc_obj, variables = "sex", strata_variables = NULL, pd = 0.7, alpha = 0.5)
@@ -110,6 +112,8 @@ sdc_obj <- createSdcObj(dat = pri_data_pram_age_mar, keyVars = c("age_group", "s
 sdc_obj_k <- createSdcObj(dat = pri_data_pram_age_mar, keyVars = c("age_group", "citizenship", "marital_status", "zip"))
 print(sdc_obj_k, type="kAnon")
 print(sdc_obj_k, "risk")
+print(sdc_obj_k@risk$global$risk)
+
 
 # pram on sex variable 
 sdc_obj <- pram(sdc_obj, variables = "sex", strata_variables = NULL, pd = 0.7, alpha = 0.5)
@@ -184,6 +188,40 @@ print(pri_data_pram_age_mar_supression)
 #write.xlsx(pri_data_pram_age_mar_supression, file = "anon_data/anon_data_global2_pram_supression.xlsx")
 
 ```
+Global recoding on age and marital status 
+pram on sex 
+```{r}
+#global recode on age 
+pri_data_pram_age_mar_supression <- pri_data
+pri_data_pram_age_mar_supression$age_group <- cut(pri_data_pram_age_mar_supression$age, breaks=c(18, 30, 38, 48, 58, 70, 101), 
+                    right=TRUE)
+# global recode on marital status 
+pri_data_pram_age_mar_supression$marital_status <- mapvalues(pri_data_pram_age_mar_supression$marital_status, from=c("Divorced", "Married/separated", "Never married", "Widowed"), to=c("Not married", "Married", "Not married", "Not married"))
+
+# creating object 
+sdc_obj <- createSdcObj(dat = pri_data_pram_age_mar_supression, keyVars = c("age_group", "sex", "citizenship", "education", "marital_status", "zip"))
+
+sdc_obj_k <- createSdcObj(dat = pri_data_pram_age_mar_supression, keyVars = c("age_group", "citizenship", "marital_status", "zip"))
+
+
+# k-anonymity computation 
+sdc_obj_k <- sdc_obj_k <- localSuppression(sdc_obj, k = 2)
+print(sdc_obj_k, type="kAnon")
+print(sdc_obj_k, "risk")
+
+# pram on sex variable 
+sdc_obj <- pram(sdc_obj, variables = "sex", strata_variables = NULL, pd = 0.7, alpha = 0.5)
+
+anonymized_data3 <- extractManipData(sdc_obj)
+
+# delete the name 
+pri_data_pram_age_mar_supression <- anonymized_data3[, !(colnames(anonymized_data3) %in% c("dob", "age"))]
+print(pri_data_pram_age_mar_supression)
+#write.xlsx(pri_data_pram_age_mar_supression, file = "anon_data/anon_data_global2_pram_supression.xlsx")
+
+```
+
+
 
 
 PRAM on sex variable 
