@@ -76,27 +76,10 @@ def chi2_A(results_data, survey_data):
     print("Chi-square Test Results for Polling Station")
     print("Chi-square statistic:", chi2_polling)
     print("p-value:", p_value_polling)
-    
     # Perform chi-square test for e-votes
     print("Evotes")
     chi2_evote, p_value_evote, dof_evote, expected_evote = chi2_contingency(df_evote)
     print("Chi-square Test Results for E-votes")
     print("Chi-square statistic:", chi2_evote)
     print("p-value:", p_value_evote)
-    
-    # Return the results
-    return {
-        'polling_station': {
-            'chi2': chi2_polling,
-            'p_value': p_value_polling,
-            'dof': dof_polling,
-            'expected': expected_polling
-        },
-        'evotes': {
-            'chi2': chi2_evote,
-            'p_value': p_value_evote,
-            'dof': dof_evote,
-            'expected': expected_evote
-        }
-    }
 
