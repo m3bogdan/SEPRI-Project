@@ -1,0 +1,199 @@
+sex,evote,marital_status,party,age_group,zip_region,education_category,Danish_Citizenship
+Male,1,Never married,Red,40-49,Region 1,Higher Education,True
+Female,0,Divorced,Green,70+,Region 2,Basic Education,True
+Female,0,Never married,Green,18-29,Region 3,Basic Education,True
+Female,0,Never married,Red,30-39,Region 1,Vocational and Short-Cycle Education,True
+Male,1,Married/separated,Red,50-59,Region 1,Vocational and Short-Cycle Education,True
+Female,0,Never married,Green,18-29,Region 3,Basic Education,True
+Female,0,Divorced,Red,70+,Region 1,Vocational and Short-Cycle Education,True
+Male,0,Divorced,Green,18-29,Region 3,Vocational and Short-Cycle Education,True
+Female,1,Never married,Green,30-39,Region 1,Vocational and Short-Cycle Education,True
+Male,0,Divorced,Green,40-49,Region 3,Vocational and Short-Cycle Education,True
+Female,1,Married/separated,Red,50-59,Region 4,Basic Education,False
+Female,0,Never married,Green,30-39,Region 4,Vocational and Short-Cycle Education,True
+Male,1,Married/separated,Green,50-59,Region 3,Vocational and Short-Cycle Education,True
+Female,0,Married/separated,Green,30-39,Region 3,Basic Education,True
+Male,1,Married/separated,Red,70+,Region 1,Higher Education,True
+Female,0,Divorced,Green,60-69,Region 3,Vocational and Short-Cycle Education,True
+Male,1,Married/separated,Green,70+,Region 1,Basic Education,True
+Male,0,Married/separated,Green,40-49,Region 2,Vocational and Short-Cycle Education,True
+Male,0,Divorced,Green,50-59,Region 1,Vocational and Short-Cycle Education,False
+Female,1,Married/separated,Green,40-49,Region 2,Vocational and Short-Cycle Education,True
+Female,0,Widowed,Red,70+,Region 4,Vocational and Short-Cycle Education,True
+Male,1,Married/separated,Green,30-39,Region 2,Higher Education,True
+Male,0,Married/separated,Green,70+,Region 3,Higher Education,False
+Male,0,Never married,Green,40-49,Region 2,Basic Education,False
+Female,1,Never married,Green,18-29,Region 2,Vocational and Short-Cycle Education,False
+Female,0,Married/separated,Red,70+,Region 4,Basic Education,True
+Female,0,Never married,Green,30-39,Region 3,Basic Education,True
+Female,0,Widowed,Red,70+,Region 2,Higher Education,True
+Male,1,Never married,Green,30-39,Region 3,Basic Education,False
+Male,0,Never married,Green,40-49,Region 1,Vocational and Short-Cycle Education,True
+Female,0,Widowed,Red,70+,Region 1,Basic Education,True
+Male,0,Never married,Green,50-59,Region 3,Basic Education,True
+Male,0,Married/separated,Red,40-49,Region 2,Basic Education,True
+Male,0,Never married,Green,30-39,Region 1,Higher Education,True
+Male,0,Married/separated,Green,70+,Region 4,Vocational and Short-Cycle Education,True
+Female,0,Widowed,Red,70+,Region 4,Vocational and Short-Cycle Education,True
+Female,0,Divorced,Red,60-69,Region 2,Vocational and Short-Cycle Education,True
+Male,1,Never married,Green,40-49,Region 2,Basic Education,True
+Female,1,Married/separated,Red,50-59,Region 2,Higher Education,True
+Male,0,Married/separated,Red,50-59,Region 4,Vocational and Short-Cycle Education,True
+Male,1,Never married,Green,18-29,Region 4,Basic Education,True
+Male,1,Never married,Red,30-39,Region 2,Higher Education,True
+Female,0,Divorced,Green,40-49,Region 1,Vocational and Short-Cycle Education,True
+Female,1,Married/separated,Red,60-69,Region 3,Vocational and Short-Cycle Education,True
+Female,1,Never married,Red,60-69,Region 1,Vocational and Short-Cycle Education,True
+Female,1,Married/separated,Red,50-59,Region 4,Vocational and Short-Cycle Education,True
+Female,0,Married/separated,Red,50-59,Region 4,Basic Education,True
+Male,0,Never married,Red,60-69,Region 1,Basic Education,True
+Male,0,Never married,Red,70+,Region 1,Higher Education,True
+Female,1,Divorced,Green,60-69,Region 2,Vocational and Short-Cycle Education,False
+Male,0,Never married,Green,30-39,Region 2,Vocational and Short-Cycle Education,True
+Male,1,Never married,Green,18-29,Region 3,Vocational and Short-Cycle Education,True
+Male,0,Married/separated,Red,40-49,Region 1,Higher Education,True
+Female,0,Married/separated,Green,40-49,Region 4,Vocational and Short-Cycle Education,True
+Male,1,Never married,Green,18-29,Region 1,Vocational and Short-Cycle Education,False
+Male,1,Divorced,Green,40-49,Region 4,Vocational and Short-Cycle Education,True
+Male,1,Married/separated,Green,30-39,Region 4,Basic Education,True
+Female,0,Divorced,Red,50-59,Region 3,Basic Education,True
+Female,0,Never married,Green,40-49,Region 2,Vocational and Short-Cycle Education,True
+Male,1,Married/separated,Green,40-49,Region 2,Vocational and Short-Cycle Education,True
+Male,1,Widowed,Green,50-59,Region 2,Vocational and Short-Cycle Education,True
+Female,0,Never married,Green,30-39,Region 3,Vocational and Short-Cycle Education,True
+Male,0,Never married,Green,50-59,Region 3,Basic Education,True
+Male,0,Married/separated,Green,70+,Region 4,Basic Education,True
+Male,0,Never married,Red,50-59,Region 2,Vocational and Short-Cycle Education,True
+Male,0,Widowed,Green,60-69,Region 1,Vocational and Short-Cycle Education,False
+Male,0,Married/separated,Green,40-49,Region 1,Basic Education,True
+Female,0,Married/separated,Red,30-39,Region 1,Higher Education,True
+Female,0,Married/separated,Red,40-49,Region 2,Higher Education,True
+Male,0,Never married,Red,50-59,Region 3,Basic Education,True
+Male,0,Widowed,Green,70+,Region 2,Basic Education,True
+Female,0,Married/separated,Red,50-59,Region 2,Vocational and Short-Cycle Education,False
+Male,0,Never married,Green,30-39,Region 1,Higher Education,True
+Female,1,Widowed,Green,60-69,Region 4,Vocational and Short-Cycle Education,True
+Female,0,Never married,Green,18-29,Region 4,Basic Education,True
+Male,0,Never married,Green,30-39,Region 2,Basic Education,True
+Female,1,Married/separated,Red,70+,Region 4,Vocational and Short-Cycle Education,True
+Male,1,Married/separated,Green,40-49,Region 3,Vocational and Short-Cycle Education,True
+Male,1,Married/separated,Green,40-49,Region 4,Vocational and Short-Cycle Education,True
+Male,1,Never married,Red,30-39,Region 4,Higher Education,True
+Male,1,Never married,Red,30-39,Region 1,Vocational and Short-Cycle Education,True
+Female,0,Never married,Red,40-49,Region 3,Basic Education,True
+Female,1,Divorced,Green,50-59,Region 4,Vocational and Short-Cycle Education,False
+Male,1,Married/separated,Green,30-39,Region 1,Basic Education,True
+Female,0,Never married,Red,60-69,Region 1,Vocational and Short-Cycle Education,False
+Male,1,Married/separated,Red,40-49,Region 1,Vocational and Short-Cycle Education,True
+Male,1,Never married,Red,40-49,Region 4,Vocational and Short-Cycle Education,True
+Female,0,Never married,Green,60-69,Region 2,Vocational and Short-Cycle Education,True
+Male,0,Never married,Green,18-29,Region 4,Basic Education,True
+Female,1,Never married,Green,18-29,Region 2,Basic Education,True
+Female,0,Married/separated,Green,50-59,Region 2,Basic Education,True
+Female,0,Married/separated,Red,70+,Region 2,Vocational and Short-Cycle Education,True
+Female,0,Never married,Red,50-59,Region 1,Vocational and Short-Cycle Education,False
+Male,0,Married/separated,Green,40-49,Region 3,Vocational and Short-Cycle Education,True
+Female,0,Married/separated,Green,30-39,Region 4,Vocational and Short-Cycle Education,False
+Male,1,Never married,Green,18-29,Region 1,Basic Education,True
+Male,0,Never married,Green,50-59,Region 2,Vocational and Short-Cycle Education,True
+Male,0,Never married,Green,40-49,Region 3,Vocational and Short-Cycle Education,True
+Female,0,Married/separated,Green,60-69,Region 3,Vocational and Short-Cycle Education,True
+Female,0,Never married,Green,18-29,Region 1,Vocational and Short-Cycle Education,False
+Female,0,Never married,Green,30-39,Region 2,Higher Education,True
+Female,0,Widowed,Red,60-69,Region 4,Vocational and Short-Cycle Education,True
+Male,0,Divorced,Red,70+,Region 2,Vocational and Short-Cycle Education,True
+Male,0,Married/separated,Green,50-59,Region 2,Vocational and Short-Cycle Education,True
+Female,1,Married/separated,Green,30-39,Region 2,Higher Education,True
+Female,1,Never married,Green,18-29,Region 3,Basic Education,True
+Male,0,Married/separated,Green,40-49,Region 2,Vocational and Short-Cycle Education,True
+Female,1,Never married,Red,40-49,Region 2,Higher Education,True
+Female,1,Married/separated,Green,60-69,Region 2,Basic Education,True
+Male,0,Married/separated,Green,50-59,Region 2,Vocational and Short-Cycle Education,True
+Male,0,Never married,Green,18-29,Region 1,Basic Education,True
+Male,0,Married/separated,Green,60-69,Region 4,Vocational and Short-Cycle Education,True
+Female,0,Married/separated,Green,50-59,Region 4,Vocational and Short-Cycle Education,True
+Male,1,Married/separated,Green,70+,Region 1,Basic Education,True
+Female,1,Never married,Green,30-39,Region 2,Vocational and Short-Cycle Education,True
+Male,0,Never married,Green,30-39,Region 4,Vocational and Short-Cycle Education,True
+Male,0,Married/separated,Green,40-49,Region 2,Basic Education,True
+Male,1,Never married,Green,50-59,Region 1,Vocational and Short-Cycle Education,True
+Female,1,Divorced,Red,50-59,Region 4,Higher Education,True
+Female,1,Married/separated,Red,30-39,Region 4,Basic Education,True
+Male,1,Divorced,Green,60-69,Region 2,Vocational and Short-Cycle Education,True
+Female,0,Never married,Green,18-29,Region 2,Basic Education,True
+Female,1,Never married,Red,30-39,Region 1,Basic Education,True
+Female,0,Married/separated,Green,18-29,Region 3,Basic Education,True
+Female,0,Married/separated,Green,30-39,Region 3,Vocational and Short-Cycle Education,True
+Female,0,Divorced,Red,40-49,Region 4,Vocational and Short-Cycle Education,True
+Male,1,Divorced,Red,40-49,Region 3,Vocational and Short-Cycle Education,True
+Female,0,Divorced,Red,50-59,Region 4,Higher Education,True
+Female,0,Married/separated,Green,50-59,Region 2,Basic Education,True
+Male,0,Never married,Green,40-49,Region 4,Basic Education,True
+Male,1,Married/separated,Green,60-69,Region 4,Basic Education,True
+Female,0,Married/separated,Green,70+,Region 4,Basic Education,True
+Male,0,Married/separated,Green,18-29,Region 3,Basic Education,False
+Female,0,Married/separated,Red,50-59,Region 4,Vocational and Short-Cycle Education,True
+Male,0,Never married,Green,30-39,Region 2,Vocational and Short-Cycle Education,True
+Female,0,Married/separated,Green,60-69,Region 1,Vocational and Short-Cycle Education,True
+Female,1,Never married,Green,30-39,Region 3,Higher Education,False
+Female,0,Never married,Red,50-59,Region 2,Higher Education,True
+Female,0,Widowed,Red,70+,Region 2,Vocational and Short-Cycle Education,True
+Female,1,Married/separated,Red,40-49,Region 4,Vocational and Short-Cycle Education,True
+Female,0,Never married,Green,60-69,Region 2,Vocational and Short-Cycle Education,True
+Female,1,Divorced,Green,30-39,Region 3,Higher Education,True
+Male,1,Never married,Green,18-29,Region 1,Basic Education,True
+Female,1,Married/separated,Red,60-69,Region 1,Basic Education,True
+Female,0,Divorced,Red,50-59,Region 1,Vocational and Short-Cycle Education,True
+Female,0,Widowed,Red,70+,Region 2,Basic Education,True
+Male,0,Never married,Green,70+,Region 1,Basic Education,True
+Male,0,Married/separated,Red,70+,Region 2,Vocational and Short-Cycle Education,True
+Female,0,Never married,Red,40-49,Region 3,Vocational and Short-Cycle Education,True
+Male,1,Never married,Green,30-39,Region 2,Vocational and Short-Cycle Education,True
+Female,1,Married/separated,Red,50-59,Region 1,Vocational and Short-Cycle Education,True
+Male,1,Never married,Red,50-59,Region 4,Vocational and Short-Cycle Education,True
+Female,0,Married/separated,Red,40-49,Region 3,Vocational and Short-Cycle Education,True
+Female,0,Never married,Green,18-29,Region 3,Basic Education,True
+Female,0,Never married,Red,50-59,Region 4,Vocational and Short-Cycle Education,True
+Male,0,Divorced,Green,50-59,Region 4,Vocational and Short-Cycle Education,True
+Male,0,Never married,Green,30-39,Region 3,Higher Education,True
+Female,0,Married/separated,Red,60-69,Region 1,Vocational and Short-Cycle Education,True
+Female,0,Married/separated,Green,40-49,Region 4,Vocational and Short-Cycle Education,False
+Male,0,Married/separated,Green,50-59,Region 2,Vocational and Short-Cycle Education,True
+Male,0,Divorced,Green,50-59,Region 4,Basic Education,True
+Female,0,Never married,Green,30-39,Region 3,Vocational and Short-Cycle Education,True
+Male,1,Married/separated,Green,70+,Region 2,Vocational and Short-Cycle Education,True
+Female,0,Divorced,Red,50-59,Region 2,Higher Education,True
+Female,1,Married/separated,Green,60-69,Region 1,Vocational and Short-Cycle Education,True
+Male,0,Married/separated,Green,50-59,Region 1,Basic Education,True
+Male,0,Widowed,Red,70+,Region 4,Vocational and Short-Cycle Education,True
+Female,0,Married/separated,Green,60-69,Region 4,Basic Education,True
+Female,0,Never married,Red,40-49,Region 3,Higher Education,True
+Male,1,Married/separated,Green,70+,Region 3,Vocational and Short-Cycle Education,True
+Female,0,Married/separated,Green,30-39,Region 2,Basic Education,True
+Female,1,Never married,Green,30-39,Region 1,Higher Education,True
+Female,1,Married/separated,Red,70+,Region 2,Vocational and Short-Cycle Education,True
+Male,1,Married/separated,Red,50-59,Region 1,Vocational and Short-Cycle Education,True
+Female,1,Never married,Green,18-29,Region 2,Basic Education,False
+Male,0,Never married,Green,18-29,Region 3,Basic Education,True
+Male,0,Married/separated,Red,40-49,Region 4,Vocational and Short-Cycle Education,True
+Male,1,Never married,Green,18-29,Region 1,Basic Education,False
+Male,0,Never married,Green,18-29,Region 4,Basic Education,True
+Male,1,Never married,Red,18-29,Region 3,Vocational and Short-Cycle Education,True
+Male,0,Divorced,Red,40-49,Region 1,Vocational and Short-Cycle Education,True
+Male,0,Married/separated,Green,70+,Region 2,Basic Education,True
+Female,0,Widowed,Green,70+,Region 2,Vocational and Short-Cycle Education,True
+Female,0,Married/separated,Green,60-69,Region 1,Basic Education,False
+Female,1,Married/separated,Red,70+,Region 1,Basic Education,True
+Male,0,Married/separated,Red,60-69,Region 2,Higher Education,True
+Male,1,Married/separated,Green,50-59,Region 4,Basic Education,False
+Female,0,Never married,Green,18-29,Region 4,Vocational and Short-Cycle Education,True
+Male,1,Married/separated,Green,50-59,Region 1,Vocational and Short-Cycle Education,False
+Male,0,Divorced,Green,60-69,Region 1,Vocational and Short-Cycle Education,True
+Male,0,Married/separated,Red,60-69,Region 2,Vocational and Short-Cycle Education,True
+Female,1,Never married,Red,40-49,Region 1,Higher Education,True
+Female,1,Never married,Green,18-29,Region 1,Vocational and Short-Cycle Education,True
+Female,0,Married/separated,Red,50-59,Region 3,Basic Education,True
+Male,1,Never married,Green,18-29,Region 1,Vocational and Short-Cycle Education,True
+Female,0,Married/separated,Green,30-39,Region 2,Basic Education,True
+Male,1,Married/separated,Red,40-49,Region 3,Higher Education,True
+Female,1,Married/separated,Green,30-39,Region 4,Basic Education,False
