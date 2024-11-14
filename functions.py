@@ -83,3 +83,30 @@ def chi2_A(results_data, survey_data):
     print("Chi-square statistic:", chi2_evote)
     print("p-value:", p_value_evote)
 
+def k_anonymity_violations(data, quasi_identifiers, k_levels=[2, 3, 5]):
+    # Group by quasi-identifiers to get the counts for each unique combination
+    grouped = data.groupby(quasi_identifiers).size().reset_index(name='count')
+    
+    # Dictionary to store the number of rows violating each k-level
+    violations = {}
+    total_rows = len(data)
+
+    for k in k_levels:
+        # Count rows where the group size is less than k
+        violating_rows = grouped[grouped['count'] < k]['count'].sum()
+        # Store as a percentage for comparison with R's output
+        violations[k] = violating_rows, (violating_rows / total_rows) * 100
+
+    return violations
+
+def identify_k_anonymity_violations(data, quasi_identifiers, k=2):
+    # Group by quasi-identifiers to count each unique combination
+    grouped = data.groupby(quasi_identifiers).size().reset_index(name='count')
+    
+    # Filter for combinations where the count is less than k (i.e., violate k-anonymity)
+    violating_combinations = grouped[grouped['count'] < k]
+    
+    # Merge to find the original rows that match these violating combinations
+    violations = data.merge(violating_combinations.drop(columns='count'), on=quasi_identifiers, how='inner')
+    
+    return violations
